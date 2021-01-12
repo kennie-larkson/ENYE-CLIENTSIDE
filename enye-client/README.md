@@ -6,6 +6,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `cd enye-client`
+
+Then run the following command to start the application:
+
 ### `yarn start`
 
 Runs the app in the development mode.\
