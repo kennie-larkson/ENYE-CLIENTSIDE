@@ -3,7 +3,7 @@ import axios from "axios";
 import "./App.css";
 import Profiles from "./components/profiles";
 import Paginate from "./components/pagination";
-import SearchBar from "./components/searchbar";
+import SearchPage from "./components/searchpage";
 
 function App() {
   const [profiles, setProfiles] = useState([]);
@@ -24,7 +24,6 @@ function App() {
         },
       } = response;
       setProfiles(profiles);
-      console.log(profiles);
       setLoading(false);
     } catch (error) {
       console.log(`Oops!: ${error}`);
@@ -48,8 +47,14 @@ function App() {
 
   return (
     <main className="App container mt-4">
-      <h1 className="text-primary mb-3">Enye - List of Patient Details</h1>
-      <SearchBar profiles={profiles} />
+      <h1 className="text-primary mb-3">Enye - List of Customer Records </h1>
+      <h3 className="text-primary mb-3">
+        <p>
+          Search our customer records either by customer name, credit card type,
+          gender and payment method{" "}
+        </p>
+      </h3>
+      <SearchPage profiles={profiles} />
       <Profiles profiles={currentProfiles} loading={loading} />
       <Paginate
         profilesPerPage={profilesPerPage}
